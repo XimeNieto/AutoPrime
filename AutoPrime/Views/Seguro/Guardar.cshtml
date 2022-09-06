@@ -1,0 +1,86 @@
+﻿@model SeguroModelo
+@{
+	ViewData["Title"] = "Guardar";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>###AutoPrime### - Tu taller confiable</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="icon" type="image/png" href="~/images/icons/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="~/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="~/css/util.css">
+	<link rel="stylesheet" type="text/css" href="~/css/main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="~/Images/GuardarSeguro.jpg" alt="AutoPrime">
+				</div>
+
+				<form asp-action="Guardar" asp-controller="Seguro" method="post">
+					<span class="login100-form-title">
+						Agregar un seguro
+					</span>
+					<div class="mb-3">
+						<label class="form-label">Fecha de Inicio</label>
+						<input asp-for="FechaInicio" type="date" class="input100">
+						<span asp-validation-for="FechaInicio" class="text-danger"></span>
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Fecha Final</label>
+						<input asp-for="FechaFinal" type="date" class="input100">
+						<span asp-validation-for="FechaFinal" class="text-danger"></span>
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Número de Póliza</label>
+						<input asp-for="PolizaNumero" type="text" class="input100">
+						<span asp-validation-for="PolizaNumero" class="text-danger"></span>
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Tipo de Seguro</label>
+						<input asp-for="Tipo" type="text" class="input100">
+						<span asp-validation-for="Tipo" class="text-danger"></span>
+					</div>
+
+					<div class="mb-3">
+						<label class="form-label">Propietario</label>
+						<input asp-for="FkDueno" type="text" class="input100">
+						<span asp-validation-for="FkDueno" class="text-danger"></span>
+					</div>
+					<button type="submit" class="btn btn-success">Guardar</button>
+					<a asp-action="Listar" asp-controller="Seguro" class="btn btn-info">Volver a la lista</a>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="~/vendor/bootstrap/js/popper.js"></script>
+	<script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="~/vendor/select2/select2.min.js"></script>
+	<script src="~/vendor/tilt/tilt.jquery.min.js"></script>
+	<script>
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+	<script src="~/js/main.js"></script>
+
+</body>
+</html>
+

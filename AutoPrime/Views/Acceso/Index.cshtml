@@ -1,0 +1,77 @@
+﻿@model Usuario
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>###AutoPrime### - Tu taller confiable</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="icon" type="image/png" href="~/images/icons/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="~/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="~/css/util.css">
+	<link rel="stylesheet" type="text/css" href="~/css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="images/img-01.png" alt="AutoPrime">
+				</div>
+
+				<form asp-controller = "Acceso" asp-action ="Index" method="post">
+					<span class="login100-form-title">
+						Bienvenidos a AutoPrime
+					</span>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+						<input type="email" class="input100" asp-for="Correo">
+                </div>
+					<div class="mb-3">
+						<label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                    <input type="password" class="input100" asp-for="Clave">
+                </div>
+                
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Ingresar
+						</button>
+					</div>
+
+					<div class="text-center p-t-136">
+						<a class="txt2" href="#">
+							AutoPrime 2022 - Creado por PragProgram FullStack Team
+
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+	<script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="~/vendor/bootstrap/js/popper.js"></script>
+	<script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="~/vendor/select2/select2.min.js"></script>
+	<script src="~/vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+	<script src="~/js/main.js"></script>
+
+</body>
+</html>

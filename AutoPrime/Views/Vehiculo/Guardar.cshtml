@@ -1,0 +1,115 @@
+﻿@model VehiculoModelo
+@{
+	ViewData["Title"] = "Guardar";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>###AutoPrime### - Tu taller confiable</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="icon" type="image/png" href="~/images/icons/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="~/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="~/css/util.css">
+	<link rel="stylesheet" type="text/css" href="~/css/main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="~/Images/GuardarVehiculo.jpg" alt="AutoPrime">
+				</div>
+
+				<form asp-action="Guardar" asp-controller="Vehiculo" method="post">
+					<span class="login100-form-title">
+						Agregar un Vehículo
+					</span>
+					<div class="mb-3">
+						<label class="form-label">Placa</label>
+						<input asp-for="Placa" type="text" class="input100">
+						<span asp-validation-for="Placa" class="text-danger"></span>
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Tipo</label>
+						<input asp-for="Tipo" type="text" class="input100">
+						<span asp-validation-for="Tipo" class="text-danger"></span>
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Marca</label>
+						<input asp-for="Marca" type="text" class="input100">
+						<span asp-validation-for="Marca" class="text-danger"></span>
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Modelo</label>
+						<input asp-for="Modelo" type="text" class="input100">
+						<span asp-validation-for="Modelo" class="text-danger"></span>
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Capacidad</label>
+						<input asp-for="Capacidad" type="text" class="input100">
+						<span asp-validation-for="Capacidad" class="text-danger"></span>
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Cilindraje</label>
+						<input asp-for="Cilindraje" type="text" class="input100">
+						<span asp-validation-for="Cilindraje" class="text-danger"></span>
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Ciudad de Origen</label>
+						<input asp-for="CiudadOrigen" type="text" class="input100">
+						<span asp-validation-for="CiudadOrigen" class="text-danger"></span>
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Descripción</label>
+						<input asp-for="Descripcion" type="text" class="input100">
+						<span asp-validation-for="Descripcion" class="text-danger"></span>
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Dueño</label>
+						<select class="form-select form-select-sm" id="IdDueno"></select>
+						<input asp-for="FkDueno" type="text" class="input100">
+						<span asp-validation-for="FkDueno" class="text-danger"></span>
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Seguro</label>
+						<select class="form-select form-select-sm" id="IdSeguro"></select>
+						<input asp-for="FkSeguro" type="text" class="input100">
+						<span asp-validation-for="FkSeguro" class="text-danger"></span>
+					</div>
+					<button type="submit" class="btn btn-success">Guardar</button>
+					<a asp-action="Listar" asp-controller="Vehiculo" class="btn btn-info">Volver a la lista</a>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+	<script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="~/vendor/bootstrap/js/popper.js"></script>
+	<script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="~/vendor/select2/select2.min.js"></script>
+	<script src="~/vendor/tilt/tilt.jquery.min.js"></script>
+	<script>
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+	<script src="~/js/main.js"></script>
+
+</body>
+</html>
+
+

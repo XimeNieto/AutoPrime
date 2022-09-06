@@ -1,0 +1,51 @@
+﻿@model List<SeguroModelo>
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style type="text/css">
+        body {
+            background-image: url('/images/fondo.png');
+            margin: 0;
+        }
+    </style>
+}
+
+
+    <div class="card">
+        <div class="card-header">
+            Listado de Seguros
+        </div>
+        <div class="card-body">
+            <a asp-action="Guardar" asp-controller="Seguro" class="btn btn-success"><i class="bi bi-plus-circle"></i>Crear Nuevo</a>
+            <hr />
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Fecha de Inicio</th>
+                        <th>Fecha de Fin</th>
+                        <th>Número de Poliza</th>
+                        <th>Tipo</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.FechaInicio</td>
+                        <td>@item.FechaFinal</td>
+                        <td>@item.PolizaNumero</td>
+                        <td>@item.Tipo</td>
+                        <td>
+                            <a asp-action="Editar" asp-controller="Seguro" class="btn btn-primary btn-sm" asp-route-IdSeguro="@item.IdSeguro"><i class="bi bi-pencil-square"></i>Editar</a>
+                            <a asp-action="Eliminar" asp-controller="Seguro" class="btn btn-danger btn-sm" asp-route-IdSeguro="@item.IdSeguro"><i class="bi bi-x-octagon"></i>Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

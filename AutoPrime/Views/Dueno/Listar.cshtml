@@ -1,0 +1,53 @@
+﻿@model List<DuenoModelo>
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style type="text/css">
+        body {
+            background-image: url('/images/fondo.png');
+            margin: 0;
+        }
+    </style>
+}
+
+    <div class="card">
+        <div class="card-header">
+            Listado de Propietarios
+        </div>
+        <div class="card-body">
+            <a asp-action="Guardar" asp-controller="Dueno" class="btn btn-success"><i class="bi bi-plus-circle"></i>Crear Nuevo</a>
+            <hr />
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Identificacion</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Fecha de Nacimiento Nacimiento</th>
+                        <th>Ciudad</th>
+                        <th>Email</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Identificacion</td>
+                        <td>@item.Nombres</td>
+                        <td>@item.Apellidos</td>
+                        <td>@item.FechaNacimiento</td>
+                        <td>@item.Ciudad</td>
+                        <td>@item.Email</td>
+                        <td>
+                            <a asp-action="Editar" asp-controller="Dueno" class="btn btn-primary btn-sm" asp-route-IdDueno="@item.IdDueno"><i class="bi bi-pencil-square"></i>Editar</a>
+                            <a asp-action="Eliminar" asp-controller="Dueno" class="btn btn-danger btn-sm" asp-route-IdDueno="@item.IdDueno"><i class="bi bi-x-octagon"></i>Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

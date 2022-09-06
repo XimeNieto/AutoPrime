@@ -1,0 +1,58 @@
+﻿@model List<VehiculoModelo>
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style type="text/css">
+        body {
+            background-image: url('/images/fondo.png');
+            margin: 0;
+        }
+    </style>
+}
+
+    <div class="card">
+        <div class="card-header">
+            Listado de Propietarios
+        </div>
+        <div class="card-body">
+            <a asp-action="Guardar" asp-controller="Vehiculo" class="btn btn-success"><i class="bi bi-plus-circle"></i>Crear Nuevo</a>
+            <hr />
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Placa</th>
+                        <th>Tipo</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Capacidad</th>
+                        <th>Cilindraje</th>
+                        <th>Ciudad Origen</th>
+                        <th>Descripción</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Placa</td>
+                        <td>@item.Tipo</td>
+                        <td>@item.Marca</td>
+                        <td>@item.Modelo</td>
+                        <td>@item.Capacidad</td>
+                        <td>@item.Cilindraje</td>
+                        <td>@item.CiudadOrigen</td>
+                        <td>@item.Descripcion</td>
+                        <td>
+                            <a asp-action="Editar" asp-controller="Vehiculo" class="btn btn-primary btn-sm" asp-route-IdVehiculo="@item.IdVehiculo"><i class="bi bi-pencil-square"></i>Editar</a>
+                            <a asp-action="Eliminar" asp-controller="Vehiculo" class="btn btn-danger btn-sm" asp-route-IdVehiculo="@item.IdVehiculo"><i class="bi bi-x-octagon"></i>Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
